@@ -36,7 +36,7 @@ namespace analyzr.Models
         [DisplayName("Total lines by line length")]
         [DefaultValue(0)]
         public int countedLines { get; set; }
-
+        
         [DisplayName("Total lines by line returns")]
         [DefaultValue(0)]
         public int countedLinesByCRLF { get; set; }
