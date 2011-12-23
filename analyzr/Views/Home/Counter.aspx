@@ -7,8 +7,8 @@
 <asp:Content ID="counterContent" ContentPlaceHolderID="MainContent" runat="server">
 <%: Html.ValidationSummary(false, "No se creó la cuenta. Corrija los errores e inténtelo de nuevo.") %>
     <% using (Html.BeginForm("Counter", "Home", FormMethod.Post)) { %>
+    <h3 style="text-align: center"><%: Html.LabelFor(m => m.inputText) %></h3>
     <p style="text-align: center">
-    <h3><%: Html.LabelFor(m => m.inputText) %></h3>
         <%: Html.TextAreaFor(m => m.inputText) %>
     </p>
     <p style="text-align: center">
