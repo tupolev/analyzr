@@ -342,3 +342,9 @@ div#title
 {
     width: 6em;
 }
+
+#inputText 
+{
+	width : 70%;
+	height: 400px;	
+}
