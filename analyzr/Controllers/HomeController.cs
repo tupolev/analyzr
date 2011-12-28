@@ -25,14 +25,6 @@ namespace analyzr.Controllers
         [HttpPost]
         public ActionResult Counter(analyzr.Models.CounterModel m) {
             m.doMaths();
-            /*
-            ViewData["totalPriceUsingLinesByCRLF"] = m.totalPriceUsingLinesByCRLF;
-            ViewData["totalPriceUsingLines"] = m.totalPriceUsingLines;
-            ViewData["totalPriceUsingWords"] = m.totalPriceUsingWords;
-            ViewData["countedLinesByCRLF"] = m.countedLinesByCRLF;
-            ViewData["countedLines"] = m.countedLines;
-            ViewData["countedWords"] = m.countedWords;
-             * */
             System.Diagnostics.Trace.WriteLine(m.countedLines);
             ViewData["output_generated"]= true;
             return View(m);

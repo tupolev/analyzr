@@ -36,7 +36,11 @@ namespace analyzr.Models
         [DisplayName("Total lines by line length")]
         [DefaultValue(0)]
         public int countedLines { get; set; }
-        
+
+        [DisplayName("Total repeated words (found more than once in the text)")]
+        [DefaultValue(0)]
+        public int countedRepeatedWords { get; set; }
+
         [DisplayName("Total lines by line returns")]
         [DefaultValue(0)]
         public int countedLinesByCRLF { get; set; }
@@ -58,6 +62,24 @@ namespace analyzr.Models
         [DisplayName("Total price using lines by line returns")]
         [DefaultValue(0.0)]
         public Double totalPriceUsingLinesByCRLF { get; set; }
+
+
+        public bool getRepeatedWords() {
+            try
+            {
+                MatchCollection collection = Regex.Matches(this.inputText, @"\b(?<word>\w+)\s+(\k<word>)\b");
+                this.countedRepeatedWords = collection.Count;
+            }
+            catch (Exception)
+            {
+                this.countedRepeatedWords = -1;
+                return false;
+            }
+
+
+            return true;
+        }
+
 
         public bool getLinesByLength() {
             try
@@ -130,13 +152,15 @@ namespace analyzr.Models
                 getLinesByCrLf();
                 getLinesByLength();
                 getPrices();
+                getRepeatedWords();
             } catch (Exception) {
-                this.totalPriceUsingLines = -1;
-                this.totalPriceUsingLinesByCRLF = -1;
-                this.totalPriceUsingWords = -1;
-                this.countedLines = -1;
-                this.countedLinesByCRLF = -1;
-                this.countedWords = -1;
+                this.totalPriceUsingLines = 0;
+                this.totalPriceUsingLinesByCRLF = 0;
+                this.totalPriceUsingWords = 0;
+                this.countedLines = 0;
+                this.countedLinesByCRLF = 0;
+                this.countedWords = 0;
+                this.countedRepeatedWords = 0;
                 return false;
             }
             return true;

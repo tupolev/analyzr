@@ -50,6 +50,7 @@
                                 <div class="form_line"><%: Html.LabelFor(m => m.countedLines)%>&nbsp;&nbsp;</div>
                                 <div class="form_line"><%: Html.LabelFor(m => m.countedLinesByCRLF)%>&nbsp;&nbsp;</div>
                                 <div class="form_line"><%: Html.LabelFor(m => m.countedWords)%>&nbsp;&nbsp;</div>
+                                <div class="form_line"><%: Html.LabelFor(m => m.countedRepeatedWords)%>&nbsp;&nbsp;</div>
                             </div>
                             <div style="width: 40%;text-align: right; display:inline-block; height: 75px;">
                                 <div class="form_line"><strong><%: Model.totalPriceUsingLines %> &euro;</strong></div>
@@ -58,6 +59,7 @@
                                 <div class="form_line"><strong><%: Model.countedLines %></strong></div>
                                 <div class="form_line"><strong><%: Model.countedLinesByCRLF %></strong></div>
                                 <div class="form_line"><strong><%: Model.countedWords %></strong></div>
+                                <div class="form_line"><strong><%: Model.countedRepeatedWords %></strong></div>
                             </div>
                         </div>
             </div>
