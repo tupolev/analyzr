@@ -6,33 +6,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" />Analyzr::Multipurpose text scanner and price calculator</title>
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../../Content/favicon.ico" >
+    <link rel="icon" href="../../Content/animated_favicon.gif" type="image/gif" >
 </head>
 
 <body>
     <div class="page">
-
-        <div id="header">
-            <div id="title">
-                <h1>Analyzr :: Multipurpose text scanner and price calculator</h1>
+      <div id="header" style="position: relative;">
+            <div id="title"  style="height: 100px;">
+                <h1><%: Html.ActionLink("Analyzr", "Index", "Home") %></h1>
+                <h2>Multipurpose text scanner and price calculator</h2>
             </div>
-            <div>
-            &nbsp;
-            </div>
-            
-            <div id="menucontainer">
-            
-                <ul id="menu">              
-                    <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
-                </ul>
-            
-            </div>
-        </div>
-
+        </div>  
+        
         <div id="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
 
             <div id="footer">
-            Open Source project. Find the full code and more in <a href="http://github.com/tupolev/analyzr">GitHub</a>.
+            Open Source project by <a href="http://kodesoft.net">kodesoft</a>. Find the full code and more in <a href="http://github.com/tupolev/analyzr">GitHub</a>.
             </div>
         </div>
     </div>

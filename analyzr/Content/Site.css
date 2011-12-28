@@ -54,10 +54,7 @@ h1
     padding-bottom: 0;
     margin-bottom: 0;
 }
-h2
-{
-    padding: 0 0 10px 0;
-}
+
 h3
 {
     font-size: 1.2em;
@@ -78,55 +75,7 @@ primer elemento secundario de las columnas de tabla izquierda y derecha */
     margin-top: 0;
 }
 
-/* ELEMENTOS DE DISEÑO PRIMARIO   
-----------------------------------------------------------*/
 
-/* puede especificar un porcentaje mayor o menor para el 
-ancho de página. O bien puede especificar un ancho de píxel exacto. */
-.page
-{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#header
-{
-    position: relative;
-    margin-bottom: 0px;
-    color: #000;
-    padding: 0;
-}
-
-#header h1
-{
-    font-weight: bold;
-    padding: 5px 0;
-    margin: 0;
-    color: #fff;
-    border: none;
-    line-height: 2em;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 32px !important;
-}
-
-#main
-{
-    padding: 30px 30px 15px 30px;
-    background-color: #fff;
-    margin-bottom: 30px;
-    _height: 1px; /* solo IE6 aplica las propiedades de CSS con un carácter de subrayado inicial */
-}
-
-#footer
-{
-    color: #999;
-    padding: 10px 0;
-    text-align: center;
-    line-height: normal;
-    margin: 0;
-    font-size: .9em;
-}
 
 /* MENÚ TABULADOR   
 ----------------------------------------------------------*/
@@ -250,17 +199,6 @@ table th
     color:Red;
 }
 
-#menucontainer
-{
-    margin-top:40px;
-}
-
-div#title
-{
-    display:block;
-    float:left;
-    text-align:left;
-}
 
 #logindisplay
 {
@@ -345,6 +283,97 @@ div#title
 
 #inputText 
 {
-	width : 70%;
+	width : 90%;
 	height: 400px;	
+}
+
+
+.form_line 
+{
+	height: 20px;	
+}
+
+#main_container 
+{
+	/*width: 600px;*/
+	background-color: White;	
+	text-align: center;
+}
+
+/* ELEMENTOS DE DISEÑO PRIMARIO   
+----------------------------------------------------------*/
+
+/* puede especificar un porcentaje mayor o menor para el 
+ancho de página. O bien puede especificar un ancho de píxel exacto. */
+.page
+{
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+#header
+{
+    color: #000;
+    padding-left: 50px;
+    height: 130px;
+}
+
+#header h1
+{
+    font-weight: bolder;
+    color: #DDD;
+    border: none;
+    font-family: "Arial Black", Arial, Helvetica, sans-serif;
+    font-size: 32px !important;
+    
+}
+
+#main
+{
+    padding: 30px 30px 15px 30px;
+    background-color: white;
+   margin-bottom: 30px;
+    _height: 1px; /* solo IE6 aplica las propiedades de CSS con un carácter de subrayado inicial */
+        border-radius: 5px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+#footer
+{
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0;
+    font-size: .9em;
+}
+
+#menu li 
+{
+	 border-radius: 5px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	}
+	
+	#menucontainer
+{
+   /* margin-top:40px;*/
+}
+
+div#title
+{
+    display:block;
+    text-align:left;
+    height: 100px;
+    
+}
+#header h1 a, #header h1 a:hover, #header h1 a:visited, #header h1 a:active 
+{
+	color:inherit;
+	text-decoration: inherit;
 }
