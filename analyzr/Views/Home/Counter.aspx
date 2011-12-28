@@ -35,38 +35,39 @@
                         <div>&nbsp;</div>
                     </div>
                 </div>
-                                                                                                                                                                                                                                                        <div id="form_output">
+        <% if (ViewData["output_generated"].Equals(true)) { %>
+        <div id="form_output">
             <hr/>
             <div style="text-align: left">
                 <h3>Scan results</h3>
             </div>
-
             <div style="text-align: center; width: 90%;  display: block;">
                         <div style="text-align: center;">
                             <div style="width: 50%;text-align: left; display:inline-block; height: 75px;">
-                                <div class="form_line"><%: Html.LabelFor(m => m.totalPriceUsingLines) %></div>
-                                <div class="form_line"><%: Html.LabelFor(m => m.totalPriceUsingLinesByCRLF) %>&nbsp;&nbsp;</div>                        
-                                <div class="form_line"><%: Html.LabelFor(m => m.totalPriceUsingWords) %>&nbsp;&nbsp;</div>
-                                <div class="form_line"><%: Html.LabelFor(m => m.countedLines) %>&nbsp;&nbsp;</div>
-                                <div class="form_line"><%: Html.LabelFor(m => m.countedLinesByCRLF) %>&nbsp;&nbsp;</div>
-                                <div class="form_line"><%: Html.LabelFor(m => m.countedWords) %>&nbsp;&nbsp;</div>
+                                <div class="form_line"><%: Html.LabelFor(m => m.totalPriceUsingLines)%></div>
+                                <div class="form_line"><%: Html.LabelFor(m => m.totalPriceUsingLinesByCRLF)%>&nbsp;&nbsp;</div>                        
+                                <div class="form_line"><%: Html.LabelFor(m => m.totalPriceUsingWords)%>&nbsp;&nbsp;</div>
+                                <div class="form_line"><%: Html.LabelFor(m => m.countedLines)%>&nbsp;&nbsp;</div>
+                                <div class="form_line"><%: Html.LabelFor(m => m.countedLinesByCRLF)%>&nbsp;&nbsp;</div>
+                                <div class="form_line"><%: Html.LabelFor(m => m.countedWords)%>&nbsp;&nbsp;</div>
                             </div>
-                            <div style="width: 40%;text-align: left; display:inline-block; height: 75px;">
-                                <div class="form_line"><strong><%: ViewData["totalPriceUsingLines"]%> &euro;</strong></div>
-                                <div class="form_line"><strong><%: ViewData["totalPriceUsingLinesByCRLF"]%> &euro;</strong></div>
-                                <div class="form_line"><strong><%: ViewData["totalPriceUsingWords"] %> &euro;</strong></div>
-                                <div class="form_line"><strong><%: ViewData["countedLines"] %></strong></div>
-                                <div class="form_line"><strong><%: ViewData["countedLinesByCRLF"] %></strong></div>
-                                <div class="form_line"><strong><%: ViewData["countedWords"] %></strong></div>
+                            <div style="width: 40%;text-align: right; display:inline-block; height: 75px;">
+                                <div class="form_line"><strong><%: Model.totalPriceUsingLines %> &euro;</strong></div>
+                                <div class="form_line"><strong><%: Model.totalPriceUsingLinesByCRLF %> &euro;</strong></div>
+                                <div class="form_line"><strong><%: Model.totalPriceUsingWords %> &euro;</strong></div>
+                                <div class="form_line"><strong><%: Model.countedLines %></strong></div>
+                                <div class="form_line"><strong><%: Model.countedLinesByCRLF %></strong></div>
+                                <div class="form_line"><strong><%: Model.countedWords %></strong></div>
                             </div>
                         </div>
-                    </div>
+            </div>
             <div>
                 &nbsp;
             </div>
         <hr/>
         </div>
-            </div>
+        <% } %>
+            </div>            
             <% } %>
         </div>
     </asp:Content>
