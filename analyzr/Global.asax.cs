@@ -29,6 +29,8 @@ namespace analyzr
             AreaRegistration.RegisterAllAreas();
 
             RegisterRoutes(RouteTable.Routes);
+            //ValueProviderFactories.Factories.Add(new JsonValueProviderFactory());
+            
         }
     }
 }

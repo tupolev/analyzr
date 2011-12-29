@@ -11,11 +11,11 @@ namespace analyzr.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("Counter", "Home");
+            return RedirectToAction("counter", "home");
         }
 
         [HttpGet]
-        public ActionResult Counter()
+        public ActionResult counter()
         {
             ViewData["output_generated"] = false;
             analyzr.Models.CounterModel m = new analyzr.Models.CounterModel();
@@ -23,11 +23,20 @@ namespace analyzr.Controllers
         }
 
         [HttpPost]
-        public ActionResult Counter(analyzr.Models.CounterModel m) {
+        public ActionResult counter(analyzr.Models.CounterModel m) {
             m.doMaths();
             System.Diagnostics.Trace.WriteLine(m.countedLines);
             ViewData["output_generated"]= true;
             return View(m);
         }
+
+        [HttpPost]
+        public ActionResult counter_backend(analyzr.Models.CounterModel m)
+        {
+            m.doMaths();
+            System.Diagnostics.Trace.WriteLine(m.countedLines);
+            ViewData["output_generated"] = true;
+            return Json(m);
+        }   
     }
 }

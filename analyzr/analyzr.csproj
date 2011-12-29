@@ -74,14 +74,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\js\analyzr.js" />
     <Content Include="Content\animated_favicon.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\favicon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\js\jquery.highlight-3.js" />
     <Content Include="Global.asax" />
-    <Content Include="Views\Home\Counter.aspx" />
+    <Content Include="Views\Home\counter.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

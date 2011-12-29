@@ -392,9 +392,16 @@ div#title
 #form_output {
 	display:none;
 }
-.highlight { border-bottom: dotted 2px blue }
+
+.form_output_item 
+{
+	font-weight: bold;	
+}
+.translate_paragraph {text-align:left;}
+.highlight { background-color: Yellow }
 .word, .word:hover {font-size: 15px; font-weight: bold; border: 1px ridge #ddd; border-radius: 3px; min-width: 70px; padding-left: 10px;padding-right: 10px; line-height: 25px;}
 .word:hover {cursor:pointer; border-color:blue;}
 #repetitions_container {
 	display:none;
 }
+.repetition_count {font-size: 10px; font-weight: normal;}
