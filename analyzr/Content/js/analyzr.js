@@ -21,9 +21,11 @@
                 'inputText': input_text,
                 'pricePerWord': price_per_word,
                 'pricePerLine': price_per_line,
-                'charsPerLine': chars_per_line
+                'charsPerLine': chars_per_line,
+                'fileUpload': $('#fileUpload').val()
             },
             success: function (data, textStatus, jqXHR) {
+                $("#inputText").text(data.inputText);
                 $("#totalPriceUsingLines").text(data.totalPriceUsingLines);
                 $("#totalPriceUsingLinesByCRLF").text(data.totalPriceUsingLinesByCRLF);
                 $("#totalPriceUsingWords").text(data.totalPriceUsingWords);

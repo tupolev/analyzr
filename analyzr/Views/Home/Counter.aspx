@@ -7,7 +7,8 @@
     <asp:Content ID="counterContent" ContentPlaceHolderID="MainContent" runat="server">
         <div id="main_container">
             <%: Html.ValidationSummary(false, "Some fields are incorrect. Please review all data and try again.") %>
-            <% using (Html.BeginForm("counter", "home", FormMethod.Post,new {id = "forminput"})) { %>
+            <% using (Html.BeginForm("counter", "home", FormMethod.Post, new { id = "forminput", enctype = "multipart/form-data" }))
+               { %>
             <div id="container_content">
                 <div id="form_input" style="text-align: center; float: none;">
                     <div style="text-align: left; width: 100%;"><h3><%: Html.LabelFor(m => m.inputText) %></h3></div>
@@ -30,6 +31,7 @@
                         </div>
                         <div>&nbsp;</div>
                         <div>
+                            <input name="uploadFile" type="file" />
                             <input type="submit" value="Scan now!" id="submit_button"/>
                         </div>
                         <div>&nbsp;</div>
