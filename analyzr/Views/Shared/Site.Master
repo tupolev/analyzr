@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" />Analyzr::Multipurpose text scanner and price calculator</title>
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" language="Javascript"></script>
+    <script src="../../Content/js/jquery.highlight-3.js" language="Javascript" ></script>
+    <script src="../../Content/js/analyzr.js" language="Javascript" ></script>    
     <link rel="shortcut icon" href="../../Content/favicon.ico" >
     <link rel="icon" href="../../Content/animated_favicon.gif" type="image/gif" >
 </head>

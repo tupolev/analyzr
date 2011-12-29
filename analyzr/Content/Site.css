@@ -1,4 +1,4 @@
-﻿/*----------------------------------------------------------
+/*----------------------------------------------------------
 El color base de esta plantilla es #5c87b2. Si desea usar
 otro color, empiece por reemplazar todas las instancias de
 #5c87b2 con el nuevo color.
@@ -372,8 +372,29 @@ div#title
     height: 100px;
     
 }
+
 #header h1 a, #header h1 a:hover, #header h1 a:visited, #header h1 a:active 
 {
 	color:inherit;
 	text-decoration: inherit;
+}
+
+#word_list {
+	border-top: 1px #ddd solid;
+	border-bottom: 1px #ddd solid;
+	border-left: none;
+	border-right:none;
+	height: 100px;
+	width: 100%;
+	overflow-y: scroll;
+	overflow-x: none;
+}
+#form_output {
+	display:none;
+}
+.highlight { border-bottom: dotted 2px blue }
+.word, .word:hover {font-size: 15px; font-weight: bold; border: 1px ridge #ddd; border-radius: 3px; min-width: 70px; padding-left: 10px;padding-right: 10px; line-height: 25px;}
+.word:hover {cursor:pointer; border-color:blue;}
+#repetitions_container {
+	display:none;
 }
