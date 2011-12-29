@@ -64,16 +64,16 @@
     }
 
     function count_reps_for(word, in_text) {
-        return in_text.match(new RegExp("\\b" + word + "\\b", "g")).length;
+        return in_text.match(new RegExp("\\b" + word + "\\b", "gi")).length;
     }
 
     function list_repeated_words(text) {
-        var sortedWords = text.split(/\b(\w+)\b/g);
+        var sortedWords = text.split(/\b(\w+)\b/gi);
         sortedWords.sort();
         duplicateWords = [];
         for (var i = 0; i < sortedWords.length - 1; i++) {
             if (sortedWords[i + 1] == sortedWords[i]) {
-                if (sortedWords[i].match(/\w/))
+                if (sortedWords[i].match(/\w/i))
                     duplicateWords.push(sortedWords[i]);
             }
         }
