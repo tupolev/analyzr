@@ -56,7 +56,7 @@
         item.html(html_text);
 
         $("span.word").click(function (event) {
-            var text = $(this).text().split("&nbsp;");
+            var text = $(this).html().split("&nbsp;");
             $("#output_text").removeHighlight();
             $("#output_text").highlight(text[0]);
 
