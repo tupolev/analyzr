@@ -1,47 +1,58 @@
 ﻿jQuery(document).ready(function ($) {
+    /*
     $("#forminput").submit(function () {
-        return false;
+    return false;
+    });
+    */
+
+    /*
+    var validation_status = validate_input();
+    if (validation_status != "OK") {
+    alert(validation_status);
+    return false;
+    }
+    var input_text = $("#inputText").val();
+    var price_per_word = $("#pricePerWord").val();
+    var price_per_line = $("#pricePerLine").val();
+    var chars_per_line = $("#charsPerLine").val();
+    */
+    /*
+    $.ajax({
+    type: 'POST',
+    url: '/home/counter_backend',
+    data: {
+    'inputText': input_text,
+    'pricePerWord': price_per_word,
+    'pricePerLine': price_per_line,
+    'charsPerLine': chars_per_line,
+    'fileUpload': $('#fileUpload').val()
+    },
+    success: function (data, textStatus, jqXHR) {
+    $("#inputText").text(data.inputText);
+    $("#totalPriceUsingLines").text(data.totalPriceUsingLines);
+    $("#totalPriceUsingLinesByCRLF").text(data.totalPriceUsingLinesByCRLF);
+    $("#totalPriceUsingWords").text(data.totalPriceUsingWords);
+    $("#countedLines").text(data.countedLines);
+    $("#countedLinesByCRLF").text(data.countedLinesByCRLF);
+    $("#countedWords").text(data.countedWords);
+    $("#countedRepeatedWords").text(data.countedRepeatedWords);
+    $("#form_output").show();
+    dump_text($("#inputText"), $("#output_text"));
+    build_word_list($("#inputText"), $("#word_list"));
+    $("#repetitions_container").show();
+    },
+    dataType: 'json'
+    });
+    */
+
     });
 
-
-    $("#submit_button").click(function () {
-        var validation_status = validate_input();
-        if (validation_status != "OK") {
-            alert(validation_status);
-            return false;
-        }
-        var input_text = $("#inputText").val();
-        var price_per_word = $("#pricePerWord").val();
-        var price_per_line = $("#pricePerLine").val();
-        var chars_per_line = $("#charsPerLine").val();
-        $.ajax({
-            type: 'POST',
-            url: '/home/counter_backend',
-            data: {
-                'inputText': input_text,
-                'pricePerWord': price_per_word,
-                'pricePerLine': price_per_line,
-                'charsPerLine': chars_per_line,
-                'fileUpload': $('#fileUpload').val()
-            },
-            success: function (data, textStatus, jqXHR) {
-                $("#inputText").text(data.inputText);
-                $("#totalPriceUsingLines").text(data.totalPriceUsingLines);
-                $("#totalPriceUsingLinesByCRLF").text(data.totalPriceUsingLinesByCRLF);
-                $("#totalPriceUsingWords").text(data.totalPriceUsingWords);
-                $("#countedLines").text(data.countedLines);
-                $("#countedLinesByCRLF").text(data.countedLinesByCRLF);
-                $("#countedWords").text(data.countedWords);
-                $("#countedRepeatedWords").text(data.countedRepeatedWords);
-                $("#form_output").show();
-                dump_text($("#inputText"), $("#output_text"));
-                build_word_list($("#inputText"), $("#word_list"));
-                $("#repetitions_container").show();
-            },
-            dataType: 'json'
-        });
-        return false;
-    });
+    function load_words_report(item) {
+        $("#form_output").show();
+        if (item.val()!="") dump_text(item, $("#output_text"));
+        build_word_list(item, $("#word_list"));
+        $("#repetitions_container").show();
+    }
 
     function dump_text(from, to) {
         var text = from.val().trim();
@@ -94,4 +105,4 @@
         return "OK";
     }
 
-});
+//});

@@ -13,7 +13,6 @@ namespace analyzr.Models
 {
     public class CounterModel
     {
-        [Required]
         [DisplayName("Text to scan")]
         public string inputText { get; set; }
 

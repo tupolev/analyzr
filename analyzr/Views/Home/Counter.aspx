@@ -22,22 +22,41 @@
                                 <div class="form_line"><%: Html.LabelFor(m => m.pricePerWord) %></div>
                                 <div class="form_line"><%: Html.LabelFor(m => m.pricePerLine) %></div>                        
                                 <div class="form_line"><%: Html.LabelFor(m => m.charsPerLine) %></div>
+                                <div class="form_line"><label for="uploadFile">Document file to translate (docx format)</label></div>
                             </div>
                             <div style="text-align: left; display:inline-block; height: 75px;">
                                 <div class="form_line"><%: Html.TextBoxFor(m => m.pricePerWord) %>&nbsp;&euro;</div>
                                 <div class="form_line"><%: Html.TextBoxFor(m => m.pricePerLine) %>&nbsp;&euro;</div>
                                 <div class="form_line"><%: Html.TextBoxFor(m => m.charsPerLine) %></div>
+                                <div class="form_line"><input name="uploadFile" type="file" /></div>
                             </div>
                         </div>
                         <div>&nbsp;</div>
                         <div>
-                            <input name="uploadFile" type="file" />
                             <input type="submit" value="Scan now!" id="submit_button"/>
                         </div>
                         <div>&nbsp;</div>
                     </div>
                 </div>
-        <% String _display = (ViewData["output_generated"].Equals(true)) ?  "inherit" : "none"; %>
+        <% String _display = "", _output_text = ""; %>
+        <% if ((ViewData["output_generated"] != null) && ViewData["output_generated"].Equals(true))
+           { 
+                _display = "inherit";
+                _output_text = (ViewData["file_text"] != null) ? ViewData["file_text"].ToString() : Model.inputText;
+         %>
+         <input type="hidden" id="outputText" value="<%: _output_text  %>" />
+            <script type="text/javascript" language="javascript">
+            <!--
+                jQuery(document).ready(function ($) {
+                    load_words_report($("#outputText"));
+                });
+            //-->
+            </script>
+         <% 
+           }else{
+                _display = "none";
+           } 
+        %>
         <div id="form_output" style="display:<%: _display %>;">
             <hr/>
             <div style="text-align: left">
@@ -69,7 +88,7 @@
         
         </div>
         <hr/>
-        <div id="repetitions_container">
+        <div id="repetitions_container" >
 			
 			<div style="text-align: left; width: 100%;"><h3>Repeated words review</h3></div>
 			<div id="word_list"></div>
