@@ -22,7 +22,7 @@
                                 <div class="form_line"><%: Html.LabelFor(m => m.pricePerWord) %></div>
                                 <div class="form_line"><%: Html.LabelFor(m => m.pricePerLine) %></div>                        
                                 <div class="form_line"><%: Html.LabelFor(m => m.charsPerLine) %></div>
-                                <div class="form_line"><label for="uploadFile">Document file to translate (docx format)</label></div>
+                                <div class="form_line"><label for="uploadFile">Document file to translate (only docx format)</label></div>
                             </div>
                             <div style="text-align: left; display:inline-block; height: 75px;">
                                 <div class="form_line"><%: Html.TextBoxFor(m => m.pricePerWord) %>&nbsp;&euro;</div>
